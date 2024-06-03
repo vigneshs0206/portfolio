@@ -10,8 +10,11 @@ import Typed from 'typed.js';
 })
 export class HomeComponent implements OnInit {
 
+  bubbles :any= [];
+
   constructor(private _translationLoaderService: TranslationLoaderService) {
     this._translationLoaderService.loadTranslations(english, french);
+  
   }
   ngOnInit(): void {
     var options = {
@@ -23,5 +26,12 @@ export class HomeComponent implements OnInit {
     
     var typed = new Typed('.typed', options);
     typed.reset(true)
+
+    for (let i = 0; i < 20; i++) {
+      this.bubbles.push({
+        top: Math.random() * 100 + '%',
+        left: Math.random() * 100 + '%'
+      });
+    }
   }
 }

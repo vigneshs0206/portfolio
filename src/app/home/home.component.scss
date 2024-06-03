@@ -173,4 +173,87 @@ body,html{
     }
   }
 
-  
+  @import "compass/css3";
+html,
+body{
+  height: 100%;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+$bubbles_total: 30;
+$anim_time: 0.01;
+
+* {
+    @include box-sizing(border-box);
+    &:after,
+    &:before {
+        @include box-sizing(border-box);
+    }
+}
+
+.main {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgb(255,255,255);
+  background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(187,147,252,0.8) 26%, rgba(148,237,255,1) 50%);
+}
+
+.main {
+  overflow: hidden;
+}
+
+.bubble {
+  background-color: rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  // border: 1px solid #ccc;
+  border-radius: 50%;
+  position: absolute;
+   @for $bubble from 1 through $bubbles_total {
+     &-#{$bubble} {
+      opacity: (random(100))*0.01;
+      left: #{random(100)}vw;
+      top: #{random(100)}vh;
+      // background-color: rgb(random(255), random(255), random(255));
+       animation: move-#{$bubble} #{30 + $bubble*0.02}s infinite;
+      @include transform(translate(0, 0) scale((random(200) + 5)*0.01));
+    }
+  }
+}
+
+.credits {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 2px 15px;
+  background-color: rgba(0,0,0,0.6);
+  width: 100%;
+  z-index: 111;
+  a {
+    color: #fff;
+    font-size: 11px;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+}
+
+// @for $bubble from 1 through $bubbles_total {
+//   @keyframes move-#{$bubble}{
+//     #{random(30) + 30}% {
+//       @include transform(translate( #{random(100) - 100}vw, #{random(100) - 100}vh), scale((random(200) + 200)*0.1));
+//     }   
+//   }
+// }
