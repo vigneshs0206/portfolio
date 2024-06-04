@@ -177,14 +177,14 @@ body,html{
   }
   
   body {
-    background: black;
+    background: rgb(255, 110, 110);
     background-image: radial-gradient(circle at center, white 0%, #222 10%, black 60%);
     overflow: hidden;
   }
   
   .wrap {
-    transform-style: preserve-3d;
-    perspective: 800px;
+    transform-style: flat;
+    /* perspective: 800px; */
   }
   
   .tri {

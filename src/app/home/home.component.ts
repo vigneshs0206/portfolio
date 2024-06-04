@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   bubbles :any= [];
 
   constructor(private _translationLoaderService: TranslationLoaderService) {
-    this._translationLoaderService.loadTranslations(english, french);
+    // this._translationLoaderService.loadTranslations(english, french);
   
   }
   ngOnInit(): void {
@@ -24,8 +24,8 @@ export class HomeComponent implements OnInit {
       loop: true,
     };
     
-    var typed = new Typed('.typed', options);
-    typed.reset(true)
+    // var typed = new Typed('.typed', options);
+    // typed.reset(true)
 
     for (let i = 0; i < 20; i++) {
       this.bubbles.push({

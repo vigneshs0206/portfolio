@@ -22,7 +22,7 @@ export class AboutComponent implements OnInit {
   constructor(private _translationLoaderService: TranslationLoaderService,
     private http: HttpClient
     ) {
-    this._translationLoaderService.loadTranslations(english, french);
+    // this._translationLoaderService.loadTranslations(english, french);
   }
 
   ngOnInit(): void {

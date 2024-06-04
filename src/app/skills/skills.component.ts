@@ -16,7 +16,7 @@ export class SkillsComponent implements OnInit {
   };
 
   constructor(private _translationLoaderService: TranslationLoaderService) {
-    this._translationLoaderService.loadTranslations(english, french);
+    // this._translationLoaderService.loadTranslations(english, french);
   }
 
   ngOnInit(): void {

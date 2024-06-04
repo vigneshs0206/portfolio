@@ -19,7 +19,7 @@ export class CurriculumVitaeComponent implements OnInit {
   volleyBallIcon:any;
 
   constructor(private _translationLoaderService: TranslationLoaderService,private _translateService: TranslateService) {
-    this._translationLoaderService.loadTranslations(english, french);
+    // this._translationLoaderService.loadTranslations(english, french);
     this._translateService.onLangChange.subscribe(()=>{
       if(this._translateService.currentLang=="en"){
         this.experiences=experiencesEn;
