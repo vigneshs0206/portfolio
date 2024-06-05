@@ -30,15 +30,15 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    $('.js-scroll-trigger').on('click',
-      function (): void {
-        $('.navbar-collapse').toggle();
-      }
-    );
-    $('.nav').on('click',
-      function (): void {
-        $('.navbar-collapse').toggle();
-      }
-    );
+    // $('.js-scroll-trigger').on('click',
+    //   function (): void {
+    //     $('.navbar-collapse').toggle();
+    //   }
+    // );
+    // $('.nav').on('click',
+    //   function (): void {
+    //     $('.navbar-collapse').toggle();
+    //   }
+    // );
   }
 }
